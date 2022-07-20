@@ -47,6 +47,41 @@ commands:
       - clear
       - clearinv
       - cynishungryandrequiressacrifices
+  disposal:
+    description: Open a GUI that lets you trash items in your inventory
+    usage: /<command>
+    aliases:
+      - trash
+      - dispose
+      - cynishungryforitems
+  gamemode adventure:
+    description: Set gamemode to adventure
+    usage: /<command>
+    aliases:
+      - gma
+      - gamemode a
+      - gm2
+  gamemode survival:
+    description: Set gamemode to survival
+    usage: /<command>
+    aliases:
+      - gms
+      - gamemode s
+      - gm 0
+  gamemode spectator:
+    description: Set gamemode to spectator
+    usage: /<command>
+    aliases:
+      - gmsp
+      - gamemode sp
+      - gm 3
+  gamemode creative:
+    description: Set gamemode to creative
+    usage: /<command>
+    aliases:
+      - gmc
+      - gamemode c
+      - gm2
   biome:
     description: See the name of the biome you are currently in
     usage: /<command>

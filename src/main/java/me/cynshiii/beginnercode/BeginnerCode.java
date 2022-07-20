@@ -27,6 +27,11 @@ public final class BeginnerCode extends JavaPlugin {
 		getCommand("itemname").setExecutor(new ItemName());
 		getCommand("fly").setExecutor(new Fly());
 		getCommand("clearinventory").setExecutor(new ClearInventory());
+		getCommand("disposal").setExecutor(new Disposal());
+		getCommand("gamemode adventure").setExecutor(new GamemodeAdventure());
+		getCommand("gamemode creative").setExecutor(new GamemodeCreative());
+		getCommand("gamemode spectator").setExecutor(new GamemodeSpectator());
+		getCommand("gamemode survival").setExecutor(new GamemodeSurvival());
 
 		// qol commands
 		getCommand("biome").setExecutor(new Biome());
