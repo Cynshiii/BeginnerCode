@@ -13,12 +13,15 @@ public class JoinAndLeave implements Listener {
 	public void onJoin(PlayerJoinEvent event) {
 
 		Player player = event.getPlayer();
+		//setting player variable to player
 
 		if(player.hasPlayedBefore()){
 			event.setJoinMessage(player.getName() + ChatColor.LIGHT_PURPLE + " has joined the server. Nerd!");
+			// if the player HAS joined the server before, send message above when they join
 		}
 		else{
 			event.setJoinMessage(ChatColor.LIGHT_PURPLE + "Welcome to the server, " + ChatColor.LIGHT_PURPLE + player.getName());
+			//else, welcome player to the server using player.getName
 		}
 	}
 
@@ -28,6 +31,7 @@ public class JoinAndLeave implements Listener {
 		Player player = event.getPlayer();
 
 		event.setQuitMessage(player.getName() + ChatColor.LIGHT_PURPLE + " has left, what a nerd!");
+		//set player variable to the player and send message above when they leave
 	}
 
 }

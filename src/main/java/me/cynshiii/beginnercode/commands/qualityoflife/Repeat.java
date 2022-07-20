@@ -14,14 +14,19 @@ public class Repeat implements CommandExecutor {
 
 		if (sender instanceof Player player){
 			if (args.length == 0){
+				//if player provides no arguments, send message below.
 				player.sendMessage(ChatColor.DARK_PURPLE + "You did not provide any arguments");
 			} else if (args.length == 1){
+				//else, if player provides one argument, put it into 'word' variable to use easier
 				String word = args[0];
 				player.sendMessage("Message: " + word);
+				//send player their argument back to them with Message: attached to the front
 			} else {
 				StringBuilder builder = new StringBuilder();
+				//creating a new string builder variable to use below
 
 				for(int i = 0; i < args.length; i++){
+					//if player provides >1 argument
 					builder.append(args[i]);
 					builder.append(" ");
 					//taking each argument from builder. appending them to add a space at the end of each one
@@ -32,6 +37,7 @@ public class Repeat implements CommandExecutor {
 				finalMessage = finalMessage.stripTrailing();
 				//removing any whitespace at the end of the message before sending it to the player
 				player.sendMessage("Final Message: " + finalMessage);
+				//send the player their args back to them with "Final message:" attached to the front
 			}
 
 

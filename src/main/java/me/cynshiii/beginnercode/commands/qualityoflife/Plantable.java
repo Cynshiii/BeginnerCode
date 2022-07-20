@@ -15,11 +15,14 @@ public class Plantable implements CommandExecutor {
 		if (sender instanceof Player player){
 
 			byte light = player.getLocation().getBlock().getLightLevel();
+			// setting a byte variable called 'light' that gets the light level of the block the player is standing on
 
 			if (light < 9){
+				// if variable light is less than 9, send message below
 				player.sendMessage(ChatColor.DARK_PURPLE + "You cannot plant here, it is too dark");
 			} else{
 				player.sendMessage(ChatColor.LIGHT_PURPLE + "It is bright enough to plant here");
+				// if variable light is greater than or equal to 9, send message above
 			}
 		}
 

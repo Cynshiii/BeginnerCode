@@ -16,10 +16,12 @@ public class Biome implements CommandExecutor {
 		if (sender instanceof Player player){
 
 			World world = player.getWorld();
+			// setting variable world to the player's current world
 			org.bukkit.block.@NotNull Biome biome = world.getBiome(player.getLocation());
+			//setting variable biome, using world variable to get the current biome of the player's current location
 
 			player.sendMessage(ChatColor.LIGHT_PURPLE + "You are currently in a " + biome + " biome");
-
+			//send player above message, using biome variable to say what biome they are in
 		}
 
 		return true;

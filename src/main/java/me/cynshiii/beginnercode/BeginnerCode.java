@@ -5,10 +5,6 @@ import me.cynshiii.beginnercode.commands.qualityoflife.Biome;
 import me.cynshiii.beginnercode.commands.qualityoflife.Plantable;
 import me.cynshiii.beginnercode.commands.qualityoflife.Repeat;
 import me.cynshiii.beginnercode.commands.qualityoflife.WordsofEncouragement;
-import me.cynshiii.beginnercode.listeners.JoinAndLeave;
-import me.cynshiii.beginnercode.spawn.commands.SetSpawn;
-import me.cynshiii.beginnercode.spawn.commands.Spawn;
-import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class BeginnerCode extends JavaPlugin {
@@ -16,9 +12,18 @@ public final class BeginnerCode extends JavaPlugin {
 	@Override
 	public void onEnable() {
 
-		//config.yml
+		//config.yml- saving default options
 		getConfig().options().copyDefaults();
 		saveDefaultConfig();
+
+		/*
+		setting commands into config:
+		getCommand("command name").setExecutor(new CommandClass());
+
+		getCommand("command name" is just letting you name your command.
+		.setExecutor(new CommandClass()); is letting the command name you set above execute the code for the class you coded the actual command in-
+		making a new instance of the command's class so that it can actually run
+		 */
 
 		// functional commands
 		getCommand("god").setExecutor(new God());
@@ -38,10 +43,6 @@ public final class BeginnerCode extends JavaPlugin {
 		getCommand("plantable").setExecutor(new Plantable());
 		getCommand("repeat").setExecutor(new Repeat());
 		getCommand("wordsofencouragement").setExecutor(new WordsofEncouragement());
-		// spawn commands
-		getCommand("setspawn").setExecutor(new SetSpawn());
-		getCommand("spawn").setExecutor(new Spawn());
-		//registering commands in other classes. name in "" = command name
 
 	}
 
