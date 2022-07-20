@@ -39,6 +39,14 @@ commands:
       - rename
       - changename
       - cynatetheoriginalnamesoineedanewone
+  clearinventory:
+    description: Clear your inventory
+    usage: /<command>
+    aliases:
+      - ci
+      - clear
+      - clearinv
+      - cynishungryandrequiressacrifices
   biome:
     description: See the name of the biome you are currently in
     usage: /<command>

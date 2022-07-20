@@ -26,6 +26,7 @@ public final class BeginnerCode extends JavaPlugin {
 		getCommand("heal").setExecutor(new Heal());
 		getCommand("itemname").setExecutor(new ItemName());
 		getCommand("fly").setExecutor(new Fly());
+		getCommand("clearinventory").setExecutor(new ClearInventory());
 
 		// qol commands
 		getCommand("biome").setExecutor(new Biome());
