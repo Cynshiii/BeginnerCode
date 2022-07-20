@@ -10,8 +10,4 @@ public final class BeginnerCode extends JavaPlugin {
 
 	}
 
-	@Override
-	public void onDisable() {
-		// Plugin shutdown logic
-	}
 }
