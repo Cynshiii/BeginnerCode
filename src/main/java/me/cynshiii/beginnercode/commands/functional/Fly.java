@@ -8,35 +8,32 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-public class God implements CommandExecutor {
+public class Fly implements CommandExecutor {
 
 	@Override
 	public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
 
 		if (sender instanceof Player player){
-			if (player.hasPermission("BeginnerCode.Commands.GodCommand")){
+			if (player.hasPermission("BeginnerCode.Commands.FlyCommand")){
 				if (args.length == 0){
-
-					if (player.isInvulnerable()){
-						player.setInvulnerable(false);
-						player.sendMessage(ChatColor.LIGHT_PURPLE + "Godmode disabled");
+					if (player.getAllowFlight()){
+						player.setAllowFlight(false);
+						player.sendMessage(ChatColor.LIGHT_PURPLE + "Flight disabled");
 					} else{
-						player.setInvulnerable(true);
-						player.sendMessage(ChatColor.LIGHT_PURPLE + "Godmode enabled");
+						player.setAllowFlight(true);
+						player.sendMessage(ChatColor.LIGHT_PURPLE + "Flight enabled");
 					}
-
 				} else{
 					String playerName = args[0];
 					Player target = Bukkit.getServer().getPlayerExact(playerName);
-
 					if (target == null){
 						player.sendMessage(ChatColor.DARK_PURPLE + "That player is not online");
-					} else if (target.isInvulnerable()){
-						target.setInvulnerable(false);
-						target.sendMessage(ChatColor.LIGHT_PURPLE + "Godmode disabled");
+					} else if (player.getAllowFlight()){
+						target.setAllowFlight(false);
+						target.sendMessage(ChatColor.LIGHT_PURPLE + "Flight disabled");
 					} else{
-						target.setInvulnerable(true);
-						target.sendMessage(ChatColor.LIGHT_PURPLE + "Godmode enabled");
+						target.setAllowFlight(true);
+						target.sendMessage(ChatColor.LIGHT_PURPLE + "Flight enabled");
 					}
 				}
 			} else{
