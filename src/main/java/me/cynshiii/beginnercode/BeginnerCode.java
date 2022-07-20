@@ -4,6 +4,10 @@ import me.cynshiii.beginnercode.commands.functional.Feed;
 import me.cynshiii.beginnercode.commands.functional.God;
 import me.cynshiii.beginnercode.commands.functional.Heal;
 import me.cynshiii.beginnercode.commands.functional.ItemName;
+import me.cynshiii.beginnercode.qualityoflife.Biome;
+import me.cynshiii.beginnercode.qualityoflife.Plantable;
+import me.cynshiii.beginnercode.qualityoflife.Repeat;
+import me.cynshiii.beginnercode.qualityoflife.WordsofEncouragement;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class BeginnerCode extends JavaPlugin {
@@ -15,6 +19,11 @@ public final class BeginnerCode extends JavaPlugin {
 		getCommand("feed").setExecutor(new Feed());
 		getCommand("heal").setExecutor(new Heal());
 		getCommand("itemname").setExecutor(new ItemName());
+		getCommand("biome").setExecutor(new Biome());
+		getCommand("plantable").setExecutor(new Plantable());
+		getCommand("repeat").setExecutor(new Repeat());
+		getCommand("wordsofencouragement").setExecutor(new WordsofEncouragement());
+		//registering commands in other classes. name in "" = command name
 
 	}
 

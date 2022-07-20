@@ -33,3 +33,27 @@ commands:
       - rename
       - changename
       - cynatetheoriginalnamesoineedanewone
+  biome:
+    description: See the name of the biome you are currently in
+    usage: /<command>
+    aliases:
+      - biometype
+      - getbiome
+      - whatbiomeiscynmakingafarminthistime
+  plantable:
+    description: See if you can plant crops on the block you're standing on
+    usage: /<command>
+    aliases:
+      - caniplanthere
+      - croplight
+      - cancynmakeafarmhere
+  repeat:
+    description: Have the words you say in your command repeat back to you
+    usage: /<command> <args>
+  wordsofencouragement:
+    description: Get some words of encouragement
+    usage: /<command>
+    aliases:
+      - woe
+      - encouragement
+      - cynneedsemotionalsupport
