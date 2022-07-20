@@ -4,10 +4,10 @@ import me.cynshiii.beginnercode.commands.functional.Feed;
 import me.cynshiii.beginnercode.commands.functional.God;
 import me.cynshiii.beginnercode.commands.functional.Heal;
 import me.cynshiii.beginnercode.commands.functional.ItemName;
-import me.cynshiii.beginnercode.qualityoflife.Biome;
-import me.cynshiii.beginnercode.qualityoflife.Plantable;
-import me.cynshiii.beginnercode.qualityoflife.Repeat;
-import me.cynshiii.beginnercode.qualityoflife.WordsofEncouragement;
+import me.cynshiii.beginnercode.commands.functional.qualityoflife.Biome;
+import me.cynshiii.beginnercode.commands.functional.qualityoflife.Plantable;
+import me.cynshiii.beginnercode.commands.functional.qualityoflife.Repeat;
+import me.cynshiii.beginnercode.commands.functional.qualityoflife.WordsofEncouragement;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class BeginnerCode extends JavaPlugin {

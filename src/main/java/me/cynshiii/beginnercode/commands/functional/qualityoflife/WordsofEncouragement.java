@@ -1,4 +1,4 @@
-package me.cynshiii.beginnercode.qualityoflife;
+package me.cynshiii.beginnercode.commands.functional.qualityoflife;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
