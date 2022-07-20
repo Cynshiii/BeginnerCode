@@ -1,4 +1,4 @@
-package me.cynshiii.beginnercode.commands.functional;
+package me.cynshiii.beginnercode.commands.functional.gamemodes;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -9,7 +9,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-public class GamemodeSurvival implements CommandExecutor {
+public class Survival implements CommandExecutor {
 
 	@Override
 	public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {

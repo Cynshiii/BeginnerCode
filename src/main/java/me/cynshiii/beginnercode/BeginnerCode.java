@@ -1,6 +1,10 @@
 package me.cynshiii.beginnercode;
 
 import me.cynshiii.beginnercode.commands.functional.*;
+import me.cynshiii.beginnercode.commands.functional.gamemodes.Adventure;
+import me.cynshiii.beginnercode.commands.functional.gamemodes.Creative;
+import me.cynshiii.beginnercode.commands.functional.gamemodes.Spectator;
+import me.cynshiii.beginnercode.commands.functional.gamemodes.Survival;
 import me.cynshiii.beginnercode.commands.qualityoflife.Biome;
 import me.cynshiii.beginnercode.commands.qualityoflife.Plantable;
 import me.cynshiii.beginnercode.commands.qualityoflife.Repeat;
@@ -33,10 +37,10 @@ public final class BeginnerCode extends JavaPlugin {
 		getCommand("fly").setExecutor(new Fly());
 		getCommand("clearinventory").setExecutor(new ClearInventory());
 		getCommand("disposal").setExecutor(new Disposal());
-		getCommand("gamemode adventure").setExecutor(new GamemodeAdventure());
-		getCommand("gamemode creative").setExecutor(new GamemodeCreative());
-		getCommand("gamemode spectator").setExecutor(new GamemodeSpectator());
-		getCommand("gamemode survival").setExecutor(new GamemodeSurvival());
+		getCommand("gamemode adventure").setExecutor(new Adventure());
+		getCommand("gamemode creative").setExecutor(new Creative());
+		getCommand("gamemode spectator").setExecutor(new Spectator());
+		getCommand("gamemode survival").setExecutor(new Survival());
 
 		// qol commands
 		getCommand("biome").setExecutor(new Biome());
