@@ -1,0 +1,6 @@
+name: BeginnerCode
+version: '${project.version}'
+main: me.cynshiii.beginnercode.BeginnerCode
+api-version: 1.19
+authors: [ Cynshiii ]
+description: All of my BeginnerCode in one place.
