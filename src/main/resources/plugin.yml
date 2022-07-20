@@ -4,3 +4,32 @@ main: me.cynshiii.beginnercode.BeginnerCode
 api-version: 1.19
 authors: [ Cynshiii ]
 description: All of my BeginnerCode in one place.
+commands:
+  feed:
+    description: Satiate your hunger
+    usage: /<command>
+    aliases:
+      - eat
+      - hungry
+      - cynateit
+  heal:
+    description: Heal your woulds
+    usage: /<command>
+    aliases:
+      - bandage
+      - cure
+      - cynbrokemybonespleasehealme
+  god:
+    description: Become invulnerable
+    usage: /<command>
+    aliases:
+      - invincibility
+      - cantdie
+      - cynistoogoodatthegame
+  itemname:
+    description: Rename the item in your hand
+    usage: /<command> <args>_<args>
+    aliases:
+      - rename
+      - changename
+      - cynatetheoriginalnamesoineedanewone
