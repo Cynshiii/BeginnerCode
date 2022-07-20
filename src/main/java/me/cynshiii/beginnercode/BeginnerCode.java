@@ -8,7 +8,6 @@ import me.cynshiii.beginnercode.commands.qualityoflife.Biome;
 import me.cynshiii.beginnercode.commands.qualityoflife.Plantable;
 import me.cynshiii.beginnercode.commands.qualityoflife.Repeat;
 import me.cynshiii.beginnercode.commands.qualityoflife.WordsofEncouragement;
-import me.cynshiii.beginnercode.listeners.DeathListener;
 import me.cynshiii.beginnercode.listeners.JoinAndLeave;
 import me.cynshiii.beginnercode.spawn.commands.SetSpawn;
 import me.cynshiii.beginnercode.spawn.commands.Spawn;
@@ -39,10 +38,6 @@ public final class BeginnerCode extends JavaPlugin {
 		getCommand("setspawn").setExecutor(new SetSpawn());
 		getCommand("spawn").setExecutor(new Spawn());
 		//registering commands in other classes. name in "" = command name
-
-		//registering instanceaccess within classes
-		getServer().getPluginManager().registerEvents((Listener) new DeathListener(), this);
-		getServer().getPluginManager().registerEvents(new JoinAndLeave(), this);
 
 	}
 
