@@ -1,9 +1,6 @@
 package me.cynshiii.beginnercode;
 
-import me.cynshiii.beginnercode.commands.functional.Feed;
-import me.cynshiii.beginnercode.commands.functional.God;
-import me.cynshiii.beginnercode.commands.functional.Heal;
-import me.cynshiii.beginnercode.commands.functional.ItemName;
+import me.cynshiii.beginnercode.commands.functional.*;
 import me.cynshiii.beginnercode.commands.qualityoflife.Biome;
 import me.cynshiii.beginnercode.commands.qualityoflife.Plantable;
 import me.cynshiii.beginnercode.commands.qualityoflife.Repeat;
@@ -28,6 +25,7 @@ public final class BeginnerCode extends JavaPlugin {
 		getCommand("feed").setExecutor(new Feed());
 		getCommand("heal").setExecutor(new Heal());
 		getCommand("itemname").setExecutor(new ItemName());
+		getCommand("fly").setExecutor(new Fly());
 
 		// qol commands
 		getCommand("biome").setExecutor(new Biome());

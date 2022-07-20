@@ -12,6 +12,12 @@ commands:
       - eat
       - hungry
       - cynateit
+  fly:
+    description: Enable creative flight
+    usage: /<command>
+    aliases:
+      - flight
+      - pleasehelpcynthrewmethousandsofblocksintheairandimfallingatthespeedofsound
   heal:
     description: Heal your woulds
     usage: /<command>
