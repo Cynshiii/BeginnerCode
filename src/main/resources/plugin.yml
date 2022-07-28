@@ -82,6 +82,20 @@ commands:
       - gmc
       - gamemode c
       - gm2
+  sethome:
+    description: Set your home at a specific location
+    usage: /<command> [name]
+  delhome:
+    description: Delete your set home
+    usage: /<command> [name]
+  home:
+    description: Go to your set homes
+    usage: /<command> [name]
+    aliases:
+      - h
+  homes:
+    description: List all set homes
+    usage: /<command>
   biome:
     description: See the name of the biome you are currently in
     usage: /<command>

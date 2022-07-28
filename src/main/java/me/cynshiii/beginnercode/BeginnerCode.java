@@ -5,13 +5,25 @@ import me.cynshiii.beginnercode.commands.functional.gamemodes.Adventure;
 import me.cynshiii.beginnercode.commands.functional.gamemodes.Creative;
 import me.cynshiii.beginnercode.commands.functional.gamemodes.Spectator;
 import me.cynshiii.beginnercode.commands.functional.gamemodes.Survival;
+import me.cynshiii.beginnercode.commands.functional.homes.*;
+import me.cynshiii.beginnercode.commands.functional.homes.HomesConfig.HomeOwner;
+import me.cynshiii.beginnercode.commands.functional.homes.HomesConfig.HomeOwner.Home;
 import me.cynshiii.beginnercode.commands.qualityoflife.Biome;
 import me.cynshiii.beginnercode.commands.qualityoflife.Plantable;
 import me.cynshiii.beginnercode.commands.qualityoflife.Repeat;
 import me.cynshiii.beginnercode.commands.qualityoflife.WordsofEncouragement;
+import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class BeginnerCode extends JavaPlugin {
+
+	public static HomesConfig homesConfig;
+
+	public void save() {
+		getConfig().set("homesConfig", homesConfig);
+		//save in config (duh)
+		saveConfig();
+	}
 
 	@Override
 	public void onEnable() {
@@ -41,12 +53,27 @@ public final class BeginnerCode extends JavaPlugin {
 		getCommand("gamemode creative").setExecutor(new Creative());
 		getCommand("gamemode spectator").setExecutor(new Spectator());
 		getCommand("gamemode survival").setExecutor(new Survival());
+		getCommand("sethome").setExecutor(new SetHome(this));
+		getCommand("delhome").setExecutor(new DelHome(this));
+		getCommand("home").setExecutor(new GoHome(this));
+		getCommand("homes").setExecutor(new ListHomes(this));
 
 		// qol commands
 		getCommand("biome").setExecutor(new Biome());
 		getCommand("plantable").setExecutor(new Plantable());
 		getCommand("repeat").setExecutor(new Repeat());
 		getCommand("wordsofencouragement").setExecutor(new WordsofEncouragement());
+
+		//config
+		ConfigurationSerialization.registerClass(HomesConfig.class);
+		ConfigurationSerialization.registerClass(HomeOwner.class);
+		ConfigurationSerialization.registerClass(Home.class);
+		//MAGIC BUKKIT SHIT GO BRRRRTTT
+
+		homesConfig = (HomesConfig) getConfig().get("homesConfig");
+		if (homesConfig == null)
+			homesConfig = new HomesConfig();
+		//if config no exist, make it exist
 
 	}
 
