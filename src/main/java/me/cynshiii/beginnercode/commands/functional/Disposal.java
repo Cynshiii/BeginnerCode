@@ -14,22 +14,18 @@ public class Disposal implements CommandExecutor {
 	@Override
 	public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
 
-		if (sender instanceof Player player){
-			if (player.hasPermission("beginnercode.commands.disposal")){
-				//setting permission node
-
-				Inventory inventory = Bukkit.createInventory(player, 54, ChatColor.LIGHT_PURPLE + "Disposal");
-				// setting inventory variable for use below, making the inventory being opened 54 spaces (double chest) and naming it "Disposal"
-				player.openInventory(inventory);
-				//make player open the inventory we made above
-
-			} else{
-				player.sendMessage(ChatColor.DARK_PURPLE + "You do not have access to this command");
-				//send player no access message if they dont have permission node set above
-			}
-
+		if(!(sender instanceof Player player))
+			return true;
+		if(!(player.hasPermission("beginnercode.commands.trash"))){
+			player.sendMessage(ChatColor.DARK_PURPLE + "You do not have access to this command");
+			return true;
 		}
 
+		Inventory inventory = Bukkit.createInventory(player, 54, ChatColor.LIGHT_PURPLE + "Disposal");
+		// setting inventory variable for use below, making the inventory being opened 54 spaces (double chest) and naming it "Disposal"
+		player.openInventory(inventory);
+		//make player open the inventory we made above
+
 		return true;
+		}
 	}
-}
