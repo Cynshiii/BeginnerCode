@@ -8,10 +8,7 @@ import me.cynshiii.beginnercode.commands.functional.gamemodes.Survival;
 import me.cynshiii.beginnercode.commands.functional.homes.*;
 import me.cynshiii.beginnercode.commands.functional.homes.HomesConfig.HomeOwner;
 import me.cynshiii.beginnercode.commands.functional.homes.HomesConfig.HomeOwner.Home;
-import me.cynshiii.beginnercode.commands.qualityoflife.Biome;
-import me.cynshiii.beginnercode.commands.qualityoflife.Plantable;
-import me.cynshiii.beginnercode.commands.qualityoflife.Repeat;
-import me.cynshiii.beginnercode.commands.qualityoflife.WordsofEncouragement;
+import me.cynshiii.beginnercode.commands.qualityoflife.*;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -27,6 +24,12 @@ public final class BeginnerCode extends JavaPlugin {
 
 	@Override
 	public void onEnable() {
+
+
+		//config
+		ConfigurationSerialization.registerClass(HomesConfig.class);
+		ConfigurationSerialization.registerClass(HomeOwner.class);
+		ConfigurationSerialization.registerClass(Home.class);
 
 		//config.yml- saving default options
 		getConfig().options().copyDefaults();
@@ -63,11 +66,7 @@ public final class BeginnerCode extends JavaPlugin {
 		getCommand("plantable").setExecutor(new Plantable());
 		getCommand("repeat").setExecutor(new Repeat());
 		getCommand("wordsofencouragement").setExecutor(new WordsofEncouragement());
-
-		//config
-		ConfigurationSerialization.registerClass(HomesConfig.class);
-		ConfigurationSerialization.registerClass(HomeOwner.class);
-		ConfigurationSerialization.registerClass(Home.class);
+		getCommand("near").setExecutor(new Near());
 		//MAGIC BUKKIT SHIT GO BRRRRTTT
 
 		homesConfig = (HomesConfig) getConfig().get("homesConfig");
