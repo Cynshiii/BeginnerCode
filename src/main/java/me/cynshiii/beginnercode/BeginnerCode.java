@@ -9,6 +9,7 @@ import me.cynshiii.beginnercode.commands.functional.homes.*;
 import me.cynshiii.beginnercode.commands.functional.homes.HomesConfig.HomeOwner;
 import me.cynshiii.beginnercode.commands.functional.homes.HomesConfig.HomeOwner.Home;
 import me.cynshiii.beginnercode.commands.qualityoflife.*;
+import me.cynshiii.beginnercode.listeners.PlayerJoinLeave;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -25,7 +26,6 @@ public final class BeginnerCode extends JavaPlugin {
 	@Override
 	public void onEnable() {
 
-
 		//config
 		ConfigurationSerialization.registerClass(HomesConfig.class);
 		ConfigurationSerialization.registerClass(HomeOwner.class);
@@ -39,7 +39,7 @@ public final class BeginnerCode extends JavaPlugin {
 		setting commands into config:
 		getCommand("command name").setExecutor(new CommandClass());
 
-		getCommand("command name" is just letting you name your command.
+		getCommand("command name") is just letting you name your command.
 		.setExecutor(new CommandClass()); is letting the command name you set above execute the code for the class you coded the actual command in-
 		making a new instance of the command's class so that it can actually run
 		 */
@@ -68,8 +68,11 @@ public final class BeginnerCode extends JavaPlugin {
 		getCommand("repeat").setExecutor(new Repeat());
 		getCommand("wordsofencouragement").setExecutor(new WordsofEncouragement());
 		getCommand("near").setExecutor(new Near());
-		//MAGIC BUKKIT SHIT GO BRRRRTTT
 
+		//register listener events
+		getServer().getPluginManager().registerEvents(new PlayerJoinLeave(), this);
+
+		//MAGIC BUKKIT SHIT GO BRRRRTTT
 		homesConfig = (HomesConfig) getConfig().get("homesConfig");
 		if (homesConfig == null)
 			homesConfig = new HomesConfig();
