@@ -125,3 +125,8 @@ commands:
     usage: /<command>
     aliases:
       - nearby
+  nearbyhomes:
+    description: See nearby homes set by any player
+    usage: /<command>
+    aliases:
+      -hnear

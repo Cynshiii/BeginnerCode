@@ -60,6 +60,7 @@ public final class BeginnerCode extends JavaPlugin {
 		getCommand("delhome").setExecutor(new DelHome(this));
 		getCommand("home").setExecutor(new GoHome(this));
 		getCommand("homes").setExecutor(new ListHomes(this));
+		getCommand("nearbyhomes").setExecutor(new NearbyHomes(this));
 
 		// qol commands
 		getCommand("biome").setExecutor(new Biome());
