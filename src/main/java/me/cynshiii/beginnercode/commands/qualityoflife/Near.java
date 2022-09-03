@@ -1,18 +1,13 @@
 package me.cynshiii.beginnercode.commands.qualityoflife;
 
-import me.cynshiii.beginnercode.commands.functional.homes.HomesConfig.HomeOwner.Home;
 import org.bukkit.ChatColor;
-import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Entity;
-import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
-import java.util.List;
 
 public class Near implements CommandExecutor {
 
