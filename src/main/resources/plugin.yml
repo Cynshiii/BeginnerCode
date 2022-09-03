@@ -120,9 +120,8 @@ commands:
       - woe
       - encouragement
       - cynneedsemotionalsupport
-  spawn:
-    description: Teleport to the server's spawnpoint
+  near:
+    description: See nearby players
     usage: /<command>
-  setspawn:
-    description: Set the server's spawnpoint
-    usage: /<command>
+    aliases:
+      - nearby
