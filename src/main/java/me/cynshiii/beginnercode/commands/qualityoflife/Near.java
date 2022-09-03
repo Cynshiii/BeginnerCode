@@ -29,12 +29,17 @@ public class Near implements CommandExecutor {
 		Collection<Player> nearbyPlayers = player.getLocation().getNearbyPlayers(300);
 
 		String message = "Nearby Players: ";
+		nearbyPlayers.remove(player);
+		//remove sender of command from the command list
 		for (Player target : nearbyPlayers) {
 			// /near: <playerlist>
-			message += target.getName() + ", ";
+			int blocks = (int) player.getLocation().distance(target.getLocation());
+			message += target.getName() + " (" + blocks + "m)" + ", ";
 		}
+		String finalMessage = message.substring(0, message.length()-2);
+		//remove unneeded spaces and commas at the end of the message
 
-		player.sendMessage(ChatColor.LIGHT_PURPLE + message.trim());
+		player.sendMessage(ChatColor.LIGHT_PURPLE + finalMessage.trim());
 
 		return true;
 	}
