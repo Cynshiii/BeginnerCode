@@ -33,7 +33,7 @@ public class DelHome implements CommandExecutor {
 						}
 						homeOwner.getHomes().remove(home);
 						plugin.save();
-						player.sendMessage(ChatColor.LIGHT_PURPLE + "GoHome " + args[0] + " removed");
+						player.sendMessage(ChatColor.LIGHT_PURPLE + "Home " + args[0] + " removed");
 					}
 				}
 			}

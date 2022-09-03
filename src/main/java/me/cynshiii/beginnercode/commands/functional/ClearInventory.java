@@ -13,7 +13,7 @@ public class ClearInventory implements CommandExecutor {
 	public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
 
 		if (sender instanceof Player player){
-			if (player.hasPermission("BeginnerCode.Commands.Clear")){
+			if (player.hasPermission("beginnercode.commands.clear")){
 				// setting permission node
 				player.getInventory().clear();
 				//getting the players inventory and clearing it

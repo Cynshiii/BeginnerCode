@@ -15,7 +15,7 @@ public class ItemName implements CommandExecutor {
 	public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
 
 		if (sender instanceof Player player){
-			if(player.hasPermission("BeginnerCode.Commands.ItemName")){
+			if(player.hasPermission("beginnercode.commands.itemname")){
 				// setting command permission
 				if (args.length == 0){
 					player.sendMessage(ChatColor.DARK_PURPLE + "No arguments given");
@@ -24,7 +24,6 @@ public class ItemName implements CommandExecutor {
 					ItemStack inhand = player.getItemInHand();
 					//setting variable "inhand" to be the item in player's hand at the time of running command
 					if (inhand != null){
-						// if their hand is NOT empty, continue
 						ItemMeta itemMeta = inhand.getItemMeta();
 						//setting itemMeta variable to catch inhand item meta
 

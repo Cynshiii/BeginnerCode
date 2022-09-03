@@ -95,7 +95,7 @@ public class HomesConfig implements ConfigurationSerializable {
 		}
 		//getters and setters for names and homes
 
-		@SerializableAs("GoHome")
+		@SerializableAs("Home")
 		public static class Home implements ConfigurationSerializable{
 			private String name;
 			private Location location;

@@ -14,7 +14,7 @@ public class Feed implements CommandExecutor {
 	public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
 
 		if (sender instanceof Player player){
-			if (player.hasPermission("BeginnerCode.Commands.FeedCommand")){
+			if (player.hasPermission("beginnercode.commands.feedcommand")){
 				//setting permission node
 				if(args.length == 0){
 					//if player provides no arguments, do below

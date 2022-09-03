@@ -14,7 +14,7 @@ public class Fly implements CommandExecutor {
 	public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
 
 		if (sender instanceof Player player){
-			if (player.hasPermission("BeginnerCode.Commands.FlyCommand")){
+			if (player.hasPermission("beginnercode.commands.flycommand")){
 				//setting permission node
 				if (args.length == 0){
 					//if they provide no arguments, do for sender

@@ -14,7 +14,7 @@ public class God implements CommandExecutor {
 	public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
 
 		if (sender instanceof Player player){
-			if (player.hasPermission("BeginnerCode.Commands.GodCommand")){
+			if (player.hasPermission("beginnercode.commands.godCommand")){
 				//setting cmd permissions
 				if (args.length == 0){
 					//if player only gives command (re: /god)

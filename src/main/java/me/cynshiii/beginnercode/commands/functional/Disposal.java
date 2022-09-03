@@ -15,7 +15,7 @@ public class Disposal implements CommandExecutor {
 	public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
 
 		if (sender instanceof Player player){
-			if (player.hasPermission("BeginnerCode.Commands.Disposal")){
+			if (player.hasPermission("beginnercode.commands.disposal")){
 				//setting permission node
 
 				Inventory inventory = Bukkit.createInventory(player, 54, ChatColor.LIGHT_PURPLE + "Disposal");
