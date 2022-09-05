@@ -20,7 +20,7 @@ public class Feed implements CommandExecutor {
 			player.sendMessage(ChatColor.DARK_PURPLE + "You do not have access to this command");
 			return true;
 		}
-		if (args.length == 0) {
+		if (args.length == 0){
 			player.setSaturation(20);
 			player.setFoodLevel(20);
 			player.sendMessage(ChatColor.LIGHT_PURPLE + "You have been fed");

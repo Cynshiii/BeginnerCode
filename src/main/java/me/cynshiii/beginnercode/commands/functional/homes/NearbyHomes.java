@@ -39,16 +39,14 @@ public class NearbyHomes implements CommandExecutor {
 		String message = "Nearby Homes: ";
 
 		List<Home> homes = homeOwner.getHomes();
-		for (Home home : homes) {
+		for (Home home : homes){
 			int blocks = (int) player.getLocation().distance(home.getLocation());
 			message += home.getName() + " (" + blocks + "m)" + ", ";
 		}
 
 		String finalMessage = message.substring(0, message.length()-2);
-
 		player.sendMessage(ChatColor.LIGHT_PURPLE + finalMessage.trim());
 
 		return true;
 	}
-
 }

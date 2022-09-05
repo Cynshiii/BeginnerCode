@@ -21,24 +21,27 @@ public class DelHome implements CommandExecutor {
 	@Override
 	public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
 
-		if (sender instanceof Player player){
-			HomesConfig.HomeOwner homeOwner = homesConfig.getHomeOwner(player);
-			if (plugin.getConfig().getBoolean("enable")){
-				if (player.hasPermission("homes.delhome")){
-					if (args.length == 1){
-						Home home = homeOwner.getHome(args[0]);
-						if (home == null){
-							player.sendMessage(ChatColor.DARK_PURPLE + "You do not have a home called " + args[0]);
-							return true;
-						}
-						homeOwner.getHomes().remove(home);
-						plugin.save();
-						player.sendMessage(ChatColor.LIGHT_PURPLE + "Home " + args[0] + " removed");
-					}
-				}
-			}
-		}
+		if (!(sender instanceof Player player))
+			return true;
 
+		if (!(player.hasPermission("homes.delhome")))
+			player.sendMessage(ChatColor.DARK_PURPLE + "You do not have access to this command");
+
+		HomesConfig.HomeOwner homeOwner = homesConfig.getHomeOwner(player);
+
+		if (!(plugin.getConfig().getBoolean("enable")))
+			return true;
+
+		if (args.length == 1){
+			Home home = homeOwner.getHome(args[0]);
+			if (home == null){
+				player.sendMessage(ChatColor.DARK_PURPLE + "You do not have a home called " + args[0]);
+				return true;
+			}
+			homeOwner.getHomes().remove(home);
+			plugin.save();
+			player.sendMessage(ChatColor.LIGHT_PURPLE + "Home " + args[0] + " removed");
+		}
 		return true;
 	}
 }

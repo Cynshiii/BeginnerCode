@@ -23,22 +23,26 @@ public class GoHome implements CommandExecutor {
 	@Override
 	public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
 
-		if (sender instanceof Player player) {
+		if (!(sender instanceof Player player))
+			return true;
+
+		if (!(player.hasPermission("homes.gohome"))){
+			player.sendMessage(ChatColor.DARK_PURPLE + "You do not have access to that command");
+			return true;
+		}
+
+		if (!(plugin.getConfig().getBoolean("enable")))
+			return true;
+
+		if (args.length == 1){
 			HomesConfig.HomeOwner homeOwner = homesConfig.getHomeOwner(player);
-			if (plugin.getConfig().getBoolean("enable")) {
-				if (player.hasPermission("homes.gohome")) {
-					if (args.length == 1) {
-						Home home = homeOwner.getHome(args[0]);
-						if (home == null) {
-							player.sendMessage(ChatColor.DARK_PURPLE + "You do not have a home called " + args[0]);
-							return true;
-						}
-						player.teleport(home.getLocation());
-						player.sendMessage(ChatColor.LIGHT_PURPLE + "Teleporting to home " + home.getName());
-						//GO HOME BITCH
-					}
-				}
+			Home home = homeOwner.getHome(args[0]);
+			if (home == null) {
+				player.sendMessage(ChatColor.DARK_PURPLE + "You do not have a home called " + args[0]);
+				return true;
 			}
+			player.teleport(home.getLocation());
+			player.sendMessage(ChatColor.LIGHT_PURPLE + "Teleporting to home " + home.getName());
 		}
 		return true;
 	}

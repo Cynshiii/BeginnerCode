@@ -30,9 +30,9 @@ public class Heal implements CommandExecutor {
 			String playerName = args[0];
 			Player target = Bukkit.getServer().getPlayerExact(playerName);
 
-			if (target == null) {
+			if (target == null){
 				player.sendMessage(ChatColor.DARK_PURPLE + "That player is not online");
-			} else {
+			} else{
 				target.setFoodLevel(20);
 				target.setSaturation(20);
 				target.setHealth(20);

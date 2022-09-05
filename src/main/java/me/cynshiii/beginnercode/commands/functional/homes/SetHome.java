@@ -22,27 +22,24 @@ public class SetHome implements CommandExecutor {
 	@Override
 	public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
 
-		if (sender instanceof Player player) {
-			HomesConfig.HomeOwner homeOwner = homesConfig.getHomeOwner(player);
-			if (plugin.getConfig().getBoolean("enable")) {
-				if (player.hasPermission("homes.sethome")) {
-					if (args.length == 1) {
-						Home home = homeOwner.getHome(args[0]);
-						if (home == null){
-							homeOwner.getHomes().add(new Home(args[0], player.getLocation()));
-							player.sendMessage(ChatColor.LIGHT_PURPLE + "Your home " + args[0] + " has been set");
-							plugin.save();
-							//every time you set new home, get homeowner object and add new home to list of homes
-						} else{
-							player.sendMessage(ChatColor.DARK_PURPLE + "You already have a home set with that name");
-							return true;
-						}
-					}
-				}
-			}
+		if (!(sender instanceof Player player))
+			return true;
+		if (!(player.hasPermission("homes.sethome"))){
+			player.sendMessage(ChatColor.DARK_PURPLE + "You do not have access to this command");
+			return true;
 		}
-
+		HomesConfig.HomeOwner homeOwner = homesConfig.getHomeOwner(player);
+		Home home = homeOwner.getHome(args[0]);
+		if (!(plugin.getConfig().getBoolean("enable")))
+			return true;
+		if (!(args.length == 1)) {
+			player.sendMessage(ChatColor.DARK_PURPLE + "You already have a home set with that name");
+			return true;
+		} else if (home == null){
+			homeOwner.getHomes().add(new Home(args[0], player.getLocation()));
+			player.sendMessage(ChatColor.LIGHT_PURPLE + "Your home " + args[0] + " has been set");
+			plugin.save();
+		}
 		return true;
 	}
-
 }

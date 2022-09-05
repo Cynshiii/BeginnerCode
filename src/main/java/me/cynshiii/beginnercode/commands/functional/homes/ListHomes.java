@@ -25,15 +25,13 @@ public class ListHomes implements CommandExecutor {
 		if (!(sender instanceof Player player))
 			return true;
 
-		if (!player.hasPermission("homes.list")) {
+		if (!player.hasPermission("homes.list")){
 			player.sendMessage(ChatColor.DARK_PURPLE + "You do not have access to this command");
 			return true;
 		}
-
 		HomesConfig.HomeOwner homeOwner = homesConfig.getHomeOwner(player);
-
 		String message = "Homes: ";
-		for (Home home : homeOwner.getHomes()) {
+		for (Home home : homeOwner.getHomes()){
 			// Homes: <homes>
 			message += home.getName() + " ";
 		}

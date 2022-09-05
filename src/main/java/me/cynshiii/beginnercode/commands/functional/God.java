@@ -20,24 +20,24 @@ public class God implements CommandExecutor {
 			player.sendMessage(ChatColor.DARK_PURPLE + "You do not have access to this command");
 		}
 
-		if (args.length == 0) {
+		if (args.length == 0){
 			if (player.isInvulnerable()) {
 				player.setInvulnerable(false);
 				player.sendMessage(ChatColor.LIGHT_PURPLE + "God disabled");
-			} else {
+			} else{
 				player.setInvulnerable(true);
 				player.sendMessage(ChatColor.LIGHT_PURPLE + "God enabled");
 			}
-		} else {
+		} else{
 			String playerName = args[0];
 			Player target = Bukkit.getServer().getPlayerExact(playerName);
 
 			if (target == null) {
 				player.sendMessage(ChatColor.DARK_PURPLE + "That player is not online");
-			} else if (target.isInvulnerable()) {
+			} else if (target.isInvulnerable()){
 				target.setInvulnerable(false);
 				target.sendMessage(ChatColor.LIGHT_PURPLE + "God disabled");
-			} else {
+			} else{
 				target.setInvulnerable(true);
 				target.sendMessage(ChatColor.LIGHT_PURPLE + "God enabled");
 			}
