@@ -20,7 +20,6 @@ public class Biome implements CommandExecutor {
 
 			player.sendMessage(ChatColor.LIGHT_PURPLE + "You are currently in a " + biome.toString().toLowerCase() + " biome");
 		}
-
 		return true;
 	}
 }
