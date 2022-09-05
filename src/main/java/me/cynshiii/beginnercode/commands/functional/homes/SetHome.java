@@ -29,16 +29,19 @@ public class SetHome implements CommandExecutor {
 			return true;
 		}
 		HomesConfig.HomeOwner homeOwner = homesConfig.getHomeOwner(player);
-		Home home = homeOwner.getHome(args[0]);
 		if (!(plugin.getConfig().getBoolean("enable")))
 			return true;
-		if (!(args.length == 1)) {
-			player.sendMessage(ChatColor.DARK_PURPLE + "You already have a home set with that name");
-			return true;
-		} else if (home == null){
-			homeOwner.getHomes().add(new Home(args[0], player.getLocation()));
-			player.sendMessage(ChatColor.LIGHT_PURPLE + "Your home " + args[0] + " has been set");
-			plugin.save();
+
+		if (args.length == 1){
+			Home home = homeOwner.getHome(args[0]);
+			if (home == null){
+				homeOwner.getHomes().add(new Home(args[0], player.getLocation()));
+				player.sendMessage(ChatColor.LIGHT_PURPLE + "Your home " + args[0] + " has been set");
+				plugin.save();
+			} else{
+				player.sendMessage(ChatColor.DARK_PURPLE + "You already have a home set with that name");
+				return true;
+			}
 		}
 		return true;
 	}
