@@ -68,6 +68,7 @@ public final class BeginnerCode extends JavaPlugin {
 		getCommand("repeat").setExecutor(new Repeat());
 		getCommand("wordsofencouragement").setExecutor(new WordsofEncouragement());
 		getCommand("near").setExecutor(new Near());
+		getCommand("boop").setExecutor(new Boop());
 
 		//register listener events
 		getServer().getPluginManager().registerEvents(new PlayerJoinLeave(), this);

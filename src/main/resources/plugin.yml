@@ -130,3 +130,6 @@ commands:
     usage: /<command>
     aliases:
       -hnear
+  boop:
+    description: Boop players!
+    usage: /<command>
