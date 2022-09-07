@@ -20,22 +20,23 @@ public class Feed implements CommandExecutor {
 			player.sendMessage(ChatColor.DARK_PURPLE + "You do not have access to this command");
 			return true;
 		}
+
 		if (args.length == 0){
 			player.setSaturation(20);
 			player.setFoodLevel(20);
 			player.sendMessage(ChatColor.LIGHT_PURPLE + "You have been fed");
-		}
-		String playerName = args[0];
-		Player target = Bukkit.getServer().getPlayerExact(playerName);
-
-		if (!(target == null)){
-			target.setSaturation(20);
-			target.setFoodLevel(20);
-			target.sendMessage(ChatColor.LIGHT_PURPLE + "You have been fed");
-			return true;
 		} else{
-			player.sendMessage(ChatColor.DARK_PURPLE + "That player is not online");
+			String playerName = args[0];
+			Player target = Bukkit.getServer().getPlayerExact(playerName);
+			if (!(target == null)){
+				target.setSaturation(20);
+				target.setFoodLevel(20);
+				target.sendMessage(ChatColor.LIGHT_PURPLE + "You have been fed");
+			} else{
+				player.sendMessage(ChatColor.DARK_PURPLE + "That player is not online");
+				return true;
+			}
 		}
 		return true;
-		}
 	}
+}
