@@ -21,7 +21,6 @@ public class ItemName implements CommandExecutor {
 		if (!(player.hasPermission("beginnercode.commands.itemname"))){
 			player.sendMessage(ChatColor.DARK_PURPLE + "You do not have access to this command");
 		}
-
 		if (args.length == 0){
 			player.sendMessage(ChatColor.DARK_PURPLE + "No arguments given");
 		} else{
