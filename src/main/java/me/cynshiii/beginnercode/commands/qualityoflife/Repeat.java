@@ -39,10 +39,7 @@ public class Repeat implements CommandExecutor {
 				player.sendMessage("Final Message: " + finalMessage);
 				//send the player their args back to them with "Final message:" attached to the front
 			}
-
-
 		}
-
 		return true;
 	}
 }
