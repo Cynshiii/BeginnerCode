@@ -10,10 +10,33 @@ import me.cynshiii.beginnercode.commands.functional.homes.HomesConfig.HomeOwner;
 import me.cynshiii.beginnercode.commands.functional.homes.HomesConfig.HomeOwner.Home;
 import me.cynshiii.beginnercode.commands.qualityoflife.*;
 import me.cynshiii.beginnercode.listeners.PlayerJoinLeave;
+import me.cynshiii.beginnercode.listeners.RandomSpawn;
+import org.bukkit.Bukkit;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class BeginnerCode extends JavaPlugin {
+
+	//static instance variables
+	private static BeginnerCode instance;
+
+	public BeginnerCode() {
+		if (instance == null){
+			instance = this;
+		} else Bukkit.getServer().getLogger().info("BeginnerCode could not be initialized: Instance is not null, but is: " + instance.getClass().getName());
+	}
+
+	public static BeginnerCode getInstance() {
+		if (instance == null)
+			Bukkit.getServer().getLogger().info("BeginnerCode could not be initialized");
+		return instance;
+	}
+	// end of static instance variables
+
+	public static int wait(long delay, Runnable runnable) {
+		getInstance().getServer().getScheduler().runTaskLater(getInstance(), runnable, delay);
+		return 0;
+	}
 
 	public static HomesConfig homesConfig;
 
@@ -25,6 +48,10 @@ public final class BeginnerCode extends JavaPlugin {
 
 	@Override
 	public void onEnable() {
+
+		//register listener events
+		getServer().getPluginManager().registerEvents(new PlayerJoinLeave(), this);
+		getServer().getPluginManager().registerEvents(new RandomSpawn(), this);
 
 		//config
 		ConfigurationSerialization.registerClass(HomesConfig.class);
@@ -69,9 +96,6 @@ public final class BeginnerCode extends JavaPlugin {
 		getCommand("wordsofencouragement").setExecutor(new WordsofEncouragement());
 		getCommand("near").setExecutor(new Near());
 		getCommand("boop").setExecutor(new Boop());
-
-		//register listener events
-		getServer().getPluginManager().registerEvents(new PlayerJoinLeave(), this);
 
 		//MAGIC BUKKIT SHIT GO BRRRRTTT
 		homesConfig = (HomesConfig) getConfig().get("homesConfig");
