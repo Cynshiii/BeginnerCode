@@ -1,6 +1,5 @@
 package me.cynshiii.beginnercode.listeners;
 
-import me.cynshiii.beginnercode.BeginnerCode;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;

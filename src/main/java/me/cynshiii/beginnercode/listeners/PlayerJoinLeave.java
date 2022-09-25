@@ -13,12 +13,10 @@ public class PlayerJoinLeave implements Listener {
 	public void onPlayerJoin(PlayerJoinEvent event) {
 		Player player = event.getPlayer();
 
-		if (!(player.hasPlayedBefore())){
+		if (!(player.hasPlayedBefore()))
 			event.setJoinMessage(ChatColor.LIGHT_PURPLE + "Welcome to the server, " + ChatColor.DARK_PURPLE + player.getName());
-		} else{
+		else
 			event.setJoinMessage(ChatColor.DARK_PURPLE + player.getName() + ChatColor.LIGHT_PURPLE + " has joined the server, what a NERD");
-		}
-
 	}
 
 	@EventHandler
